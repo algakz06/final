@@ -1,0 +1,634 @@
+@font-face{
+    font-family: Regular;
+    src: url(fonts/Nunito-Regular.ttf);
+}
+@media (min-width: 426px){
+    *{
+        padding: 0;
+        margin: 0;
+        outline: none;
+        transition: 0.3s;
+
+    }
+    .mainButton{
+        z-index: 999000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        border-radius: 1000px;
+        width: 100px;
+        height: 100px;
+    }
+    .mainButton:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108);
+    }
+    .mainButton:hover .popupName{
+        opacity: 1;
+    }
+    .popupName{
+        position: absolute;
+        width: 220px;
+        top: -85px;
+        right: -5px;
+        font-size: xx-small;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background-color: #000000aa;
+        border-radius: 6px;
+        color: #ffffff;
+        opacity: 0;
+    }
+    .popupName p {
+        font-size: small;
+        z-index: 10;
+        line-height: inherit;
+        color: #dddddd;
+    }
+    .popupName a {
+        color: #6cb5ff;
+        text-decoration: none;
+    }
+    .popupName::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        right: 50px;
+        border: 6px solid transparent;
+        border-top: 6px solid #000000aa;
+    }
+    .mainButton img{
+        height: 120px;
+        width: 160px;
+        max-width: inherit;
+    }
+    .wrapWrapper{
+        position: fixed;
+        bottom: 15px;
+        right: -265px;
+        height: 400px;
+        width: 250px;
+        z-index: 900000;
+    }
+    .wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        width: 250px;
+        background-color: #fff;
+        box-shadow: 0 25.6px 57.6px 0 rgba(0,0,0,.22), 0 4.8px 14.4px 0 rgba(0,0,0,.18);
+        border-radius: 25px;
+        z-index: 900001;
+    }
+    .wrapItem{
+        margin: 15px 15px 0 15px;
+        width: calc(100% - 30px);
+        height: calc(100% - 80px);
+    }
+    .botActive{
+        right: 15px;
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    ::placeholder {
+        color: #8e8e93;
+    }
+    .field{
+        overflow-y: scroll;
+        height: 100%;
+    }
+    .field > img{
+        display: none;
+    }
+    .inputMessage{
+        z-index: 100;
+        border-top: 1px solid #e5e5e5;
+        height: 64px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .inputItem{
+        width: calc(100% - 26px);
+        height: calc(100% - 26px);
+        margin: 13px;
+        display: grid;
+        grid-template-columns: 178px 8px 38px;
+    }
+    .inputWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inputMessage input{
+        padding-left: 7px;
+        padding-right: 7px;
+        height: 34px;
+        width: 174px;
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 1000px;
+    }
+    .inputMessage input:hover{
+        background-color: #e5e5e5;
+    }
+    .inputMessage button{
+        width: 38px;
+        height: 38px;
+        margin-right: 5px;
+        border: none;
+        border-radius: 1000px;
+        background-color: #ffa200;
+    }
+    .inputMessage button:hover{
+        background-color: #ffb027;
+    }
+    .send{
+        z-index: 1;
+        display: flex;
+        justify-content: flex-end;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    .send > div {
+        display: inline-block;
+        padding: 6px;
+        background-color: #ffa200;
+        border-radius: 17px;
+    }
+    .send > div > p {
+        text-align: end;
+        color: #fff;
+        font-family: Regular;
+        line-height: inherit;
+        font-size: 12pt;
+    }
+    .reply{
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+    }
+    .reply > div {
+        display: inline-block;
+        padding: 6px;
+        background-color: #f0f0f0;
+        border-radius: 17px;
+    }
+    .reply > div > p {
+        color: #000;
+        font-family: Regular;
+        line-height: inherit;
+        font-size: 12pt;
+    }
+    .messageBottom{
+        position: absolute;
+        bottom: 54px;
+        right: 15px;
+    }
+    .messageUp{
+        bottom: 64px;
+    }
+    .botKey{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .botKey img{
+        width: 27px;
+        height: 27px;
+    }
+    .back{
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background-color: #e5e5e5;
+    }
+    .back:hover{
+        background-color: #d0d0d0;
+        transform: translateX(-70px);
+    }
+    .delete{
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background-color: #e5e5e5;
+    }
+    .delete:hover{
+        background-color: #d0d0d0;
+        transform: translateX(-70px);
+    }
+    .back img, .delete img{
+        width: 36px;
+        height: 36px;
+    }
+    .backActive{
+        transform: translateX(-65px);
+    }
+
+    .buttonClose{
+        bottom: -115px;
+    }
+    .buttonUp{
+        bottom: 390px;
+        right: 90px;
+        box-shadow: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108);
+        background-color: #fff;
+    }
+    .deleteAlert{
+        z-index: 999900;
+        position: fixed;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000000bb;
+    }
+    .youAre{
+        padding: 15px;
+    }
+    .deleteAlert > div{
+        border-radius: 25px;
+        box-shadow: 0 0 57.6px 0 rgba(0,0,0,.22), 0 0 14.4px 0 rgba(0,0,0,.18);
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .confirmDeleteWrap{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+    .confirmDelete{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 100px 100px;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+    }
+    .confirmDelete div{
+        width: 100px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .cancelDelete{
+        background-color: #e5e5e5;
+    }
+    .yesDelete{
+        background-color: #ff0a00;
+        color: #fff;
+    }
+    .cancelDelete:hover{
+        transform: translateY(-5px);
+        background-color: #d0d0d0;
+    }
+    .yesDelete:hover{
+        transform: translateY(-5px);
+    }
+    .aAlert{
+        display: flex;
+    }
+    .toucanAnime{
+        animation: bouncing 10s infinite 10s ease-in-out;
+    }
+    @keyframes bouncing{
+        0%  { transform: translateY(0px); }
+        2%  { transform: translateY(-50px); box-shadow: 0 50px 50px rgba(0,0,0,0.1);}
+        4%  { transform: translateY(0px); box-shadow:none}
+        6%  { transform: translateY(-40px); box-shadow: 0 50px 50px rgba(0,0,0,0.1);}
+        8%  { transform: translateY(0px); box-shadow:none}
+        100%{ transform: none;}
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile */ 
+
+
+@media (max-width: 425px){
+    *{
+        padding: 0;
+        margin: 0;
+        outline: none;
+        transition: 0.3s;
+
+    }
+    .mainButton{
+        z-index: 999000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        border-radius: 1000px;
+        width: 100px;
+        height: 100px;
+    }
+    .popupName{
+        display: none;
+    }
+    .mainButton img{
+        height: 120px;
+        width: 160px;
+        max-width: inherit;
+    }
+    .wrapWrapper{
+        left: 15px;
+        bottom: calc(200px - 100vh);
+        right: 15px;
+        height: calc(100vh - 200px);
+        position: fixed;
+        z-index: 900000;
+    }
+    .wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 25.6px 57.6px 0 rgba(0,0,0,.22), 0 4.8px 14.4px 0 rgba(0,0,0,.18);
+        border-radius: 25px;
+        z-index: 900001;
+    }
+    .wrapItem{
+        margin: 15px 15px 0 15px;
+        width: calc(100% - 30px);
+        height: calc(100% - 80px);
+    }
+    .botActive{
+        bottom: 15px;
+    }
+    .background{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        z-index: 90000;
+    }
+    .ing{
+        height: 100vh;
+        background-color: #000000aa;
+    }
+    ::placeholder {
+        color: #8e8e93;
+    }
+    .field{
+        overflow-y: scroll;
+        height: 100%;
+    }
+    .field > img{
+        display: none;
+    }
+    .inputMessage{
+        z-index: 100;
+        border-top: 1px solid #e5e5e5;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        box-sizing: inherit;
+    }
+    .inputWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inputMessage input{
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 40px;
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        width: calc(100vw - 113px);
+        font-size: 21px;
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 1000px;
+    }
+
+    .inputMessage button{
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        width: 46px;
+        height: 46px;
+        border: none;
+        border-radius: 1000px;
+        background-color: #ffa200;
+    }
+    .send p, .reply p{
+        font-size: 21px;
+    }
+    .send{
+        z-index: 1;
+        display: flex;
+        justify-content: flex-end;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    .send > div {
+        display: inline-block;
+        padding: 6px;
+        background-color: #ffa200;
+        border-radius: 20px;
+    }
+    .send > div > p {
+        text-align: end;
+        color: #fff;
+        font-family: Regular;
+        line-height: inherit;
+    }
+    .reply{
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+    }
+    .reply > div {
+        display: inline-block;
+        padding: 6px;
+        background-color: #f0f0f0;
+        border-radius: 20px;
+    }
+    .reply > div > p {
+        color: #000;
+        font-family: Regular;
+        line-height: inherit;
+    }
+    .messageBottom{
+        position: absolute;
+        bottom: 54px;
+        right: 15px;
+    }
+    .messageUp{
+        bottom: 64px;
+    }
+    .botKey{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .botKey img{
+        width: 33px;
+        height: 33px;
+    }
+    .back{
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: calc(25vw - 71.25px);
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background-color: #e5e5e5;
+    }
+
+    .delete{
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: calc(25vw - 71.25px);
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background-color: #e5e5e5;
+    }
+
+    .back img, .delete img{
+        width: 36px;
+        height: 36px;
+    }
+    .backActive{
+        transform: translateY(-118px);
+    }
+    .buttonClose{
+        bottom: -115px;
+    }
+    .buttonUp{
+        bottom: calc(100vh - 155px);
+        right: calc(50vw - 62.5px);
+        box-shadow: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108);
+        background-color: #fff;
+        width: 125px;
+        height: 125px;
+    }
+    .deleteAlert{
+        z-index: 999900;
+        position: fixed;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000000bb;
+    }
+    .youAre{
+        padding: 15px;
+    }
+    .youAre > div{
+        text-align: center;
+    }
+    .deleteAlert > div{
+        border-radius: 25px;
+        box-shadow: 0 0 57.6px 0 rgba(0,0,0,.22), 0 0 14.4px 0 rgba(0,0,0,.18);
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+    }
+    .confirmDeleteWrap{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+    .confirmDelete{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 100px 100px;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+    }
+    .confirmDelete div{
+        width: 100px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .cancelDelete{
+        background-color: #e5e5e5;
+    }
+    .yesDelete{
+        background-color: #ff0a00;
+        color: #fff;
+    }
+    .aAlert{
+        display: flex;
+    }
+    .inputItem{
+        box-sizing: content-box;
+    }
+    .toucanAnime{
+        animation: bouncing 10s infinite 10s ease-in-out;
+    }
+    @keyframes bouncing{
+        0%  { transform: translateY(0px); }
+        2%  { transform: translateY(-50px);}
+        4%  { transform: translateY(0px);}
+        6%  { transform: translateY(-35px);}
+        8%  { transform: translateY(0px);}
+        100%{ transform: none;}
+    }
+    .noneScroll{
+        overflow: hidden;
+    }
+}

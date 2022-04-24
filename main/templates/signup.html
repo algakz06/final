@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang='ru'>
+  <head>
+  <meta charset='utf8'>
+<title>Best Hack'22 || Регистрация</title>
+<link rel="icon" href="../static/img/main_favicon.png">
+<link rel='stylesheet' href='../static/css/login.css'>
+</head>
+
+<body>
+
+<div class='main'>
+  <h1>Регистрация</h1>
+<form method='post' action='signup'>
+
+<div class='auth'>
+<input type='text' required id='username' name='username'>
+<span></span>
+<label>Ваш логин</label>
+  </div>
+
+  <div class='auth'>
+<input type='password' required id='password1' name='password1' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", maxlength="10", minlength="6" required/>
+<span></span>
+<label>Ваш пароль</label>
+    </div>
+  <div class='auth'>
+<input type='password' required id='password2' name='password2'>
+<span></span>
+<label>Повторите пароль</label>
+    </div>
+
+<input type='submit' value='Вход'>
+<div class='reg'>
+  Уже зарегистрированы? <a href='login'>Войти</a><br><br>
+  <span>Команда Удальцы | Best Hack'22 </span>
+</div>
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+	<title>Fin-Tech || Новостная лента</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/materialize.min.css">
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		#loader {
+			height: 100vh;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+
+		}
+		td{
+			height: 50px;
+		}
+		.progress {
+			display: none;
+		}
+		.main_container{
+			display: flex;
+			padding-top: 50px;
+		}
+		.data{
+			width: 300px;
+			text-align: center;
+		}
+		.table {
+			margin: 9px auto 0 auto;
+			width: 150px;
+			border-collapse: collapse;
+            font-style: italic;
+			font: 16px "Lucida Grande", "Helvetica", "Arial", sans-serif;
+		}
+		.money{
+			text-align: right;
+		}
+		.errorMsg {
+			font-size: 34px;
+			height: 100vh;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="navbar-fixed">
+		<nav class="teal">
+			<div class="nav-wrapper">
+				<div class="container">
+					<a href="#" class="brand-logo">Команда Удальцы</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><input type='text' id='inp_1' placeholder="Введите ТЕГ"></li>
+						<li><input type='button'onclick="update()"  value="Добавить" style='margin: 5px 5px 5px 5px;'></li>
+						<li class="active"><a href="news">Новости</a></li>
+						<li><a href="login">Личный кабинет</a></li>
+						<li><a href="index">Главная страница</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+	</div>
+
+	<div class='main_container'>
+		<div class="container">
+			<div class="row">
+				<div id="newsResults"></div>
+			</div>
+
+			<div id="loader">
+				<div class="progress">
+					<div class="indeterminate"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="data">
+			<table id="data" class="table">
+				<tbody id="history"></tbody>
+			</table>
+    	</div>
+	</div>
+
+	<script src="../static/js/jquery-3.3.1.min.js"></script>
+	<script src="../static/js/materialize.min.js"></script>
+	<script src="../static/js/app.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="../static/js/chart.js"></script>
+</body>
+<!--for commit-->
+</html>
